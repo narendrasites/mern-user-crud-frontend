@@ -10,7 +10,7 @@ const Signup = () => {
   const handleSignup = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/api/user/signup", form);
+      await axios.post("https://mern-user-crud-backend.vercel.app/api/user/signup", form);
       toast.success("Signup Successfully");
       navigate("/login");
     } catch (err) {

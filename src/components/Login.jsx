@@ -10,10 +10,13 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:5000/api/user/login", {
-        email,
-        password,
-      });
+      const res = await axios.post(
+        "https://mern-user-crud-backend.vercel.app/api/user/login",
+        {
+          email,
+          password,
+        }
+      );
       if (res.data.token) {
         localStorage.setItem("token", res.data.token);
         toast.success("Login Successfully");

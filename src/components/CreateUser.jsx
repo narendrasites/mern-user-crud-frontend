@@ -36,7 +36,7 @@ const CreateUser = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/user/add",
+        "https://mern-user-crud-backend.vercel.app/api/user/add",
         formData,
         {
           headers: {

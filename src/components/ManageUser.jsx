@@ -12,7 +12,7 @@ const ManageUser = () => {
   const fetchUsers = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:5000/api/user/get-all",
+        "https://mern-user-crud-backend.vercel.app/api/user/get-all",
         { headers: { Authorization: `Bearer ${token}` } }
       );
 
@@ -30,9 +30,12 @@ const ManageUser = () => {
   // Delete user
   const deleteUser = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/user/delete/${id}`, {
-        headers: { Authorization: `Bearer ${token}` },
-      });
+      await axios.delete(
+        `https://mern-user-crud-backend.vercel.app/api/user/delete/${id}`,
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
       toast.success("User deleted successfully!");
       setUsers(users.filter((user) => user._id !== id));
     } catch (error) {
@@ -67,7 +70,7 @@ const ManageUser = () => {
                 <td>{user.email}</td>
                 <td>
                   <img
-                    src={`http://localhost:5000${user.image}`}
+                    src={`https://mern-user-crud-backend.vercel.app/${user.image}`}
                     alt="User"
                     style={{
                       width: "50px",
