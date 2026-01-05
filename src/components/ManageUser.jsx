@@ -70,7 +70,7 @@ const ManageUser = () => {
                 <td>{user.email}</td>
                 <td>
                   <img
-                    src={`https://mern-user-crud-backend.vercel.app/${user.image}`}
+                    src={`https://mern-user-crud-backend.vercel.app${user.image}`}
                     alt="User"
                     style={{
                       width: "50px",
